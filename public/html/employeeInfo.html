@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/component/employeeInfo.css"/>
+		<script src="/lib/requirejs/require.min.js" data-main="/js/component/employee.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container modifydiv">
+			
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-inverse">
+			</nav>	
+			<table class="table table-bordered employeeForm">
+				<thead>
+				 	<tr>
+						<th>序号</th>
+						<th>公司logo</th>
+						<th>公司名称</th>
+						<th>职业类型</th>
+						<th>工作地点</th>
+						<th>职位薪资</th>
+						<th>操作</th>	
+				 	</tr>					
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			
+					<script type="text/html" id="list-template">
+						{{each list item index}}
+							<tr>
+								<td>{{index+1}}</td>
+								<td><img src="{{item.logo}}" style="width: 60px; height: 30px;"/></td>
+								<td>{{item.company}}</td>
+								<td>{{item.position}}</td>
+								<td>{{item.address}}</td>
+								<td>{{item.salary}}</td>
+								<td class="modify-btn"><div class="modifySpan">修改</div><div id="deleteSpan">删除</div></td>
+							</tr>
+						{{/each}}
+					</script>
+
+			<!--分页栏-->
+				<nav aria-label="Page navigation">
+				  <ul class="pagination">
+				    <li id="clearLi">
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li id="insertLi">
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+		</div>
+		<!--修改信息模态框-->
+			<!-- Modal -->
+			<div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+			        
+			         	<!--表格修改-->
+			         	<form>
+			         		<div class="form-group">
+						    <label for="companyLogo">上传文件</label>
+						    <input type="file" id="companyLogo">
+						    <p class="help-block">公司logo</p>
+						  </div>
+						  <div class="form-group">
+						    <label for="position">职务名称</label>
+						    <input type="text" class="form-control" id="position" placeholder="Email">
+						  </div>
+						  <div class="form-group">
+						    <label for="companyName">公司名称</label>
+						    <input type="password" class="form-control" id="companyName" placeholder="Password">
+						  </div>
+						  <div class="form-group">
+						    <label for="typeofJob">职务类型</label>
+						    <input type="password" class="form-control" id="typeofJob" placeholder="Password">
+						  </div>
+						  	<div class="form-group">
+						    <label for="workingAddress">工作地点</label>
+						    <input type="password" class="form-control" id="workingAddress" placeholder="Password">
+						  </div>
+						  	<div class="form-group">
+						    <label for="salaryRange">薪资范围</label>
+						    <input type="password" class="form-control" id="salaryRange" placeholder="Password">
+						  </div>
+						</form>
+			        
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" >确认修改</button>
+			        <button type="button" class="btn btn-primary">取消</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</body>
+</html>

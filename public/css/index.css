@@ -1,0 +1,14 @@
+.modal-body{
+	min-height: 200px;
+}
+.modal-body form{
+		min-height: 200px;
+	display:flex ;
+	flex-direction: column;
+	justify-content: space-around;
+	
+}
+.modal-body form input{
+	border: 1px solid darkgrey ;
+	border-radius: 3px;
+}

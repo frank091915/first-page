@@ -1,0 +1,25 @@
+
+.employeeForm input{
+	display: none;
+}
+.employeeForm input.active{
+	display: block;
+	width: 61px;
+}
+.employeeForm span{
+	display: none;
+}
+.employeeForm span.active{
+	display: block;
+}
+.modify-btn div{
+	float: left;
+	margin-right: 5px;
+	color: #00B7FF;
+}
+.modify-btn:hover div{
+	cursor: pointer;
+}
+.wellcome span{
+	margin-left:5px ;
+}
